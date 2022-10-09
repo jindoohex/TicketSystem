@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketLibrary", "TicketLibrary\TicketLibrary.csproj", "{4575F3F1-3526-4DF6-B83C-6065C3A61B7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ØresundLibrary", "ØresundLibrary\ØresundLibrary.csproj", "{A3B8BA08-FEAC-4082-8BC3-72B73D41A74D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorebæltLibrary", "StorebæltLibrary\StorebæltLibrary.csproj", "{2B10EBCB-4C70-4084-87D3-A3B5D2E3DCBE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemREST", "TicketSystemREST\TicketSystemREST.csproj", "{28AEEA14-9F68-462A-ADD4-4295B607603E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalDLL", "ExternalDLL", "{AE0B7E2C-1299-4D5E-BDC1-2E347EFA1693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystemTest", "TicketSystemTest\TicketSystemTest.csproj", "{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4575F3F1-3526-4DF6-B83C-6065C3A61B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4575F3F1-3526-4DF6-B83C-6065C3A61B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4575F3F1-3526-4DF6-B83C-6065C3A61B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4575F3F1-3526-4DF6-B83C-6065C3A61B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B8BA08-FEAC-4082-8BC3-72B73D41A74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B8BA08-FEAC-4082-8BC3-72B73D41A74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B8BA08-FEAC-4082-8BC3-72B73D41A74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B8BA08-FEAC-4082-8BC3-72B73D41A74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B10EBCB-4C70-4084-87D3-A3B5D2E3DCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B10EBCB-4C70-4084-87D3-A3B5D2E3DCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B10EBCB-4C70-4084-87D3-A3B5D2E3DCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B10EBCB-4C70-4084-87D3-A3B5D2E3DCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28AEEA14-9F68-462A-ADD4-4295B607603E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AEEA14-9F68-462A-ADD4-4295B607603E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AEEA14-9F68-462A-ADD4-4295B607603E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AEEA14-9F68-462A-ADD4-4295B607603E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0749340E-8C9F-44C8-A47A-AB8B9DBC1AAE}
+	EndGlobalSection
+EndGlobal
