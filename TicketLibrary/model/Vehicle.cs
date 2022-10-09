@@ -20,12 +20,6 @@ namespace TicketLibrary.model
 
 
         /// <summary>
-        /// Property for setting the name of the vehicle
-        /// </summary>
-        public string VehicleTypeName { get; set; }
-
-
-        /// <summary>
         /// Default constructor for the base class vehicle
         /// </summary>
         public Vehicle()
@@ -74,6 +68,18 @@ namespace TicketLibrary.model
         {
             return 0;
         }
+
+
+        /// <summary>
+        /// This method adds 5% discount to the vehicle ticket from Brobizz
+        /// </summary>
+        /// <returns>Returns a new double with the discounted price</returns>
+        public virtual double Brobizz()
+        {
+            var addedBrobizz = VehicleTicketPrice() * 0.95;
+            return addedBrobizz;
+        }
+
 
         /// <summary>
         /// Parsing methods into a string format readable for the user

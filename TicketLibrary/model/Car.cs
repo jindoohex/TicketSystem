@@ -44,5 +44,6 @@ namespace TicketLibrary.model
         {
             return 240;
         }
+
     }
 }

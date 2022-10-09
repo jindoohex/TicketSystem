@@ -12,7 +12,7 @@ namespace TicketSystemTest.LibraryTest
     public class TicketSystemLibraryTest
     {
         /// <summary>
-        /// Initializing the objects outside the methods to prevent DRY
+        /// Initializing the vehicle objects to minimize DRY
         /// </summary>
         private Car car = new();
         private Motorcycle mc = new();
@@ -169,6 +169,38 @@ namespace TicketSystemTest.LibraryTest
             // Assert
             Assert.Fail();
 
+        }
+
+        /// <summary>
+        /// This unit test will check if the price is properly calculated for car with brobizz discount
+        /// </summary>
+        [TestMethod()]
+        public void Car_Brobizz_Discount_Properly_Calculating_The_Price()
+        {
+            // Arrange
+            double expectedValue = 228;
+
+            // Act
+            double actualValue = car.Brobizz();
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue, 0.01);
+        }
+
+        /// <summary>
+        /// This unit test will check if the price is properly calculated for motorcycle with brobizz discount
+        /// </summary>
+        [TestMethod()]
+        public void Motorcycle_Brobizz_Discount_Properly_Calculating_The_Price()
+        {
+            // Arrange
+            double expectedValue = 118.75;
+
+            // Act
+            double actualValue = mc.Brobizz();
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualValue, 0.01);
         }
     }
 }
