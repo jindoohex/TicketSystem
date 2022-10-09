@@ -58,15 +58,6 @@ namespace TicketLibrary.model
             this.LisencePlate = lisencePlate;
         }
 
-        //public Vehicle(string vehicleTypeName)
-        //{
-        //    if (string.IsNullOrEmpty(vehicleTypeName))
-        //    {
-        //        throw new ArgumentException();
-        //    }
-        //    this.VehicleTypeName = vehicleTypeName;
-        //}
-
 
         /// <summary>
         /// This method will set what kind of vehicle it is

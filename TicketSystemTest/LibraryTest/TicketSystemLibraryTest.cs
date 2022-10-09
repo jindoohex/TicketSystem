@@ -54,7 +54,9 @@ namespace TicketSystemTest.LibraryTest
         }
 
         /// <summary>
-        /// We expect this unit test to fail, therefore we do not change assert and we implement ExpectedException
+        /// This unit test will check the license plate and expectedly fail
+        /// due to parameters of license plate being outside of specified lengths
+        /// and we add an ExpectedException to the method in this case
         /// </summary>
         /// <param name="licensePlate"></param>
         [TestMethod()]
@@ -72,6 +74,9 @@ namespace TicketSystemTest.LibraryTest
             Assert.Fail();      
         }
 
+        /// <summary>
+        /// This unit test will check if the price ticket for car is as expected: 240,-
+        /// </summary>
         [TestMethod()]
         public void Car_Ticket_Price_Should_Be_240_Test()
         {
@@ -83,9 +88,12 @@ namespace TicketSystemTest.LibraryTest
             double actualValue = car.VehicleTicketPrice();
 
             // Assert
-            Assert.AreEqual(expectedValue, actualValue, 0.01);
+            Assert.AreEqual(expectedValue, actualValue, 0.01);  // checking if values are correct while making sure delta only covers some decimals
         }
 
+        /// <summary>
+        /// This unit test will check if the vehicle type is of motorcycle
+        /// </summary>
         [TestMethod()]
         public void Vehicle_Must_Be_Motorcycle_Test()
         {
@@ -100,11 +108,14 @@ namespace TicketSystemTest.LibraryTest
 
         }
 
+        /// <summary>
+        /// This unit test will check if price ticket for motorcycle is as expected: 125,-
+        /// </summary>
         [TestMethod()]
         public void Motorcycle_Ticket_Price_Should_Be_125_Test()
         {
             // Arrange
-            Motorcycle mc = new Motorcycle();
+
             double expectedValue = 125;
 
             // Act
@@ -115,14 +126,49 @@ namespace TicketSystemTest.LibraryTest
 
         }
 
+        /// <summary>
+        /// This unit test will check if the license plate is the proper length and we expect it to succeed
+        /// </summary>
+        /// <param name="mcLicensePlate">License plate for motorcycle as string</param>
         [TestMethod()]
-        public void Motorcycle_LicensePlate_Should_Be_Seven_Characters_Test_Success()
+        [DataRow("1234567")]
+        [DataRow("ABCDEFG")]
+        [DataRow("DX-203F")]
+        public void Motorcycle_LicensePlate_Should_Be_Seven_Characters_ExpectedSuccess_Test(string mcLicensePlate)
         {
             // Arrange
 
+
             // Act
+            mc.LisencePlate = mcLicensePlate;
 
             // Assert
+            Assert.IsTrue(7 == mc.LisencePlate.Length);
+
+        }
+
+        /// <summary>
+        /// This unit test will check the license plate and expectedly fail
+        /// due to parameters of license plate being outside of specified lengths
+        /// and we add an ExpectedException to the method in this case
+        /// </summary>
+        /// <param name="licensePlate">License plate of the motorcycle</param>
+        [TestMethod()]
+        [DataRow("12345678")]
+        [DataRow("38472387489327")]
+        [DataRow("123")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Motorcycle_LicensePlate_Should_Be_Seven_Characters_ExpectedFail_Test(string licensePlate)
+        {
+            // Arrange
+            Motorcycle mc = new Motorcycle(licensePlate);
+
+            // Act
+
+
+            // Assert
+            Assert.Fail();
+
         }
     }
 }
