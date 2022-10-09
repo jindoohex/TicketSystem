@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorebæltLibrary", "Storeb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemREST", "TicketSystemREST\TicketSystemREST.csproj", "{28AEEA14-9F68-462A-ADD4-4295B607603E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalDLL", "ExternalDLL", "{AE0B7E2C-1299-4D5E-BDC1-2E347EFA1693}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystemTest", "TicketSystemTest\TicketSystemTest.csproj", "{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemTest", "TicketSystemTest\TicketSystemTest.csproj", "{EA5EF9E9-23C1-4B57-96CE-6C6B1AA9041D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

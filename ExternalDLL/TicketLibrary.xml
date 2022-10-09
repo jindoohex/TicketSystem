@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:TicketLibrary.model.Car.#ctor">
+            <summary>
+            Default constructor inheriting from the base class "vehicle"
+            </summary>
+        </member>
+        <member name="M:TicketLibrary.model.Car.#ctor(System.String)">
+            <summary>
+            Constructor that inherits from the base class "vehicle" to which will require a string
+            </summary>
+            <param name="liscencePlate">A string with the lisence plate of the vehicle</param>
+        </member>
+        <member name="M:TicketLibrary.model.Car.VehicleType">
+            <summary>
+            Overrides base type from vehicle to car
+            </summary>
+            <returns>Returns a string with "car"</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Car.VehicleTicketPrice">
+            <summary>
+            Overrides the base price of the vehicle
+            </summary>
+            <returns>Returns a double with 240</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Motorcycle.#ctor">
+            <summary>
+            Default constructor inheriting from the base class "vehicle"
+            </summary>
+        </member>
+        <member name="M:TicketLibrary.model.Motorcycle.#ctor(System.String)">
+            <summary>
+            Constructor that inherits from the base class "vehicle" to which will require a string
+            </summary>
+            <param name="liscencePlate">A string with the lisence plate of the vehicle</param>
+        </member>
+        <member name="M:TicketLibrary.model.Motorcycle.VehicleType">
+            <summary>
+            Overrides base type of vehicle to motorcycle
+            </summary>
+            <returns>Returns a string with "motorcycle"</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Motorcycle.VehicleTicketPrice">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TicketLibrary.model.Vehicle.Date">
+            <summary>
+            Property for setting the date
+            </summary>
+        </member>
+        <member name="P:TicketLibrary.model.Vehicle.LisencePlate">
+            <summary>
+            Property for setting lisence plate of the vehicle
+            </summary>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.#ctor">
+            <summary>
+            Default constructor for the base class vehicle
+            </summary>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.#ctor(System.String)">
+            <summary>
+            Constructor of the vehicle class that requires a liscence plate, which must be 7 characters
+            </summary>
+            <param name="lisencePlate">The lisencing plate of the vehicle, and must be 7 characters</param>
+            <exception cref="T:System.ArgumentNullException">Vehicle lisence plate needs a value</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Vehicle lisence plate must be 7 characters</exception>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.VehicleType">
+            <summary>
+            This method will set what kind of vehicle it is
+            </summary>
+            <returns>Returns vehicle type in a string format</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.VehicleTicketPrice">
+            <summary>
+            This method will set the ticket price for the vehicle
+            </summary>
+            <returns>Returns the ticket price for the vehicle in double format</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.Brobizz">
+            <summary>
+            This method adds 5% discount to the vehicle ticket from Brobizz
+            </summary>
+            <returns>Returns a new double with the discounted price</returns>
+        </member>
+        <member name="M:TicketLibrary.model.Vehicle.ToString">
+            <summary>
+            Parsing methods into a string format readable for the user
+            </summary>
+            <returns>Returns a string of vehicle type and the price of that vehicle</returns>
+        </member>
+    </members>
+</doc>
