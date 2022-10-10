@@ -11,7 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Reference Include="StorebæltLibrary">
+      <HintPath>..\ExternalDLL\StorebæltLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="TicketLibrary">
+      <HintPath>..\StorebæltLibrary\ExternalDLL\TicketLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ØresundLibrary">
+      <HintPath>..\ExternalDLL\ØresundLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
