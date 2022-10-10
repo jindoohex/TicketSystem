@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="StorebæltLibrary">
+      <HintPath>..\ExternalDLL\StorebæltLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="TicketLibrary">
+      <HintPath>..\ExternalDLL\TicketLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -19,6 +19,10 @@ namespace TicketSystemTest.LibraryTest
         private Motorcycle mc = new();
         private WeekendDiscount weekendDiscount = new();
 
+
+        /// <summary>
+        /// This unit test will check if the discount propery deducts 20% off the ticket price for car
+        /// </summary>
         [TestMethod()]
         public void Storebælt_Should_Discount_20Percent_From_Ticket_On_Weekends()
         {
@@ -32,8 +36,12 @@ namespace TicketSystemTest.LibraryTest
             Assert.AreEqual(expectedValue, actualValue, 0.01);
         }
 
+
+        /// <summary>
+        /// This unit test will check if discount deducts before brobizz and they both successfully deducts
+        /// </summary>
         [TestMethod()]
-        public void Storebælt_Discount_And_Brobizz()
+        public void Storebælt_WeekendDiscount_And_Brobizz()
         {
             // Arrange
             double expectedValue = 182.4;

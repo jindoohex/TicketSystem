@@ -41,6 +41,7 @@ namespace StorebæltLibrary.model
             Discount = discount;
         }
 
+
         /// <summary>
         /// This method calculates the wekeend discount based on weekend days
         /// </summary>
