@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TicketLibrary.model;
 using TicketSystemREST.Managers;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,38 +10,85 @@ namespace TicketSystemREST.Controllers
     [ApiController]
     public class MotorcycleTicketsController : ControllerBase
     {
+        /// <summary>
+        /// Using MotorycleManager
+        /// </summary>
         private static IMotorcycleManager mcmgr = new MotorcycleManager();
 
         // GET: api/<MotorcycleTicketsController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet]                           // Method
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            List<Motorcycle> motorcycleList = mcmgr.GetMotorcycleTickets();
+            return (motorcycleList.Count == 0) ? NoContent() : Ok(motorcycleList);
         }
 
         // GET api/<MotorcycleTicketsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{licensePlate}")]         // URI
+        public IActionResult GetMotorcycleByLicensePlate(string licensePlate)
         {
-            return "value";
+            try
+            {
+                Motorcycle motorcycle = mcmgr.GetMotorcycleByLicensePlate(licensePlate);
+                return Ok(motorcycle);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         // POST api/<MotorcycleTicketsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost]                          // Method
+        public IActionResult Post([FromBody] Motorcycle motorcycle)
         {
+            try
+            {
+                Motorcycle newMotorcycleTicket = mcmgr.CreateMotorcycleTicket(motorcycle);
+                string uri = "api/MotorcycleTickets/" + motorcycle.LisencePlate;
+                return Created(uri, newMotorcycleTicket);
+            }
+            catch (ArgumentException ae)
+            {
+                return Conflict(ae.Message);
+            }
+
         }
 
         // PUT api/<MotorcycleTicketsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]                           // Method
+        [Route("{licensePlate}")]           // URI
+        public IActionResult Put(string licencePlate, [FromBody] Motorcycle motorcycle)
         {
+            try
+            {
+                return Ok(mcmgr.UpdateTicket(licencePlate, motorcycle));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
         }
 
         // DELETE api/<MotorcycleTicketsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]                        // Method
+        [Route("{licensePlate}")]           // URI
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        // [EnableCors("OnlyGetDelete")]
+        public IActionResult Delete(string licensePlate)
         {
+            try
+            {
+                return Ok(mcmgr.DeleteTicket(licensePlate));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+
+                return NotFound(knfe.Message);
+            }
+
         }
     }
 }

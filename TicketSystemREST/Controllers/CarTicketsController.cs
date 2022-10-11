@@ -48,7 +48,7 @@ namespace TicketSystemREST.Controllers
             try
             {
                 Car newCarTicket = cmgr.CreateCarTicket(car);
-                string uri = "api/Books/" + car.LisencePlate;
+                string uri = "api/CarTickets/" + car.LisencePlate;
                 return Created(uri, newCarTicket);
             }
             catch (ArgumentException ae)
@@ -76,6 +76,7 @@ namespace TicketSystemREST.Controllers
         // DELETE api/<CarTicketsController>/5
         [HttpDelete]                        // Method
         [Route("{licensePlate}")]           // URI
+        [ProducesResponseType(StatusCodes.Status200OK)]
         // [EnableCors("OnlyGetDelete")]
         public IActionResult Delete(string licensePlate)
         {

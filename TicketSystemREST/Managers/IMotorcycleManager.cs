@@ -4,14 +4,14 @@ namespace TicketSystemREST.Managers
 {
     public interface IMotorcycleManager
     {
-        Car CreateMotorcycleTicket(Car newCarTicket);
+        Motorcycle CreateMotorcycleTicket(Motorcycle newMotorcycleTicket);
 
         List<Motorcycle> GetMotorcycleTickets();
 
-        Car GetMotorcycleByLicensePlate(string licensePlate);
+        Motorcycle GetMotorcycleByLicensePlate(string licensePlate);
 
-        Car UpdateTicket(string licensePlate, Motorcycle mc);
+        Motorcycle UpdateTicket(string licensePlate, Motorcycle mc);
 
-        Car DeleteTicket(string licensePlate);
+        Motorcycle DeleteTicket(string licensePlate);
     }
 }
