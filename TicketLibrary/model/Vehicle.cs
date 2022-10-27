@@ -40,14 +40,12 @@ namespace TicketLibrary.model
                 throw new ArgumentNullException();
             }
 
-            if (lisencePlate.Length > 7)
-            {
-                throw new ArgumentOutOfRangeException();
+            if (lisencePlate.Length > 7) {
+                throw new ArgumentException("Licenseplate must contain 7 characters at most.");
             }
 
-            if (lisencePlate.Length < 7)
-            {
-                throw new ArgumentOutOfRangeException();
+            if (lisencePlate.Length < 7) {
+                throw new ArgumentException("Licenseplate must contain 7 characters at least.");
             }
             this.LisencePlate = lisencePlate;
         }
